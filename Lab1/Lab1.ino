@@ -1,4 +1,4 @@
-int start = 13;
+int start = 6;
 int green = 2;
 int yellow = 3;
 int red = 4;
@@ -6,25 +6,25 @@ int buzzer = 5;
 
 void setup() {
   // put your setup code here, to run once:
-  pinMode(OUTPUT, green);
-  pinMode(OUTPUT, yellow);
-  pinMode(OUTPUT, red);
-  pinMode(OUTPUT, buzzer);
-  pinMode(INPUT, start);
-  while(start == LOW){
-    digitalWrite(red, LOW);
-    delay(1000);
-    digitalWrite(red, HIGH);
+  pinMode(green, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(red, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+  pinMode(start, INPUT);
   }
-}
-void buzzerFunction(){
-    digitalWrite(buzzer, HIGH);
-    delay(3000);
-    digitalWrite(buzzer, LOW);
-  }
+  
 void loop() {
-  if(start == HIGH){
-    while(true){
+      digitalWrite(red , HIGH);
+      delay(1000);
+      digitalWrite(red, LOW);
+      delay(1000);
+      if(digitalRead(start) == HIGH){
+        trafficLight();
+}
+}
+
+ void trafficLight(){
+  while(true){
     digitalWrite(red, HIGH);
     delay(12000);
     buzzerFunction();
@@ -37,7 +37,10 @@ void loop() {
     buzzerFunction();
     digitalWrite(yellow, LOW);
     digitalWrite(red, HIGH);
-    }
-  }   
-}
- 
+  }
+ }
+ void buzzerFunction(){
+    digitalWrite(buzzer, HIGH);
+    delay(3000);
+    digitalWrite(buzzer, LOW);
+  }
