@@ -6,7 +6,7 @@
 #define Clockwise 3 //CLOCKWISE 
 #define CounterClockwise 4 //COUNTERCLOCKWISE
 
-LiquidCrystal LCD(7, 8, 9, 10, 11, 12); //INITIALIZING PINS FOR LCD USE
+LiquidCrystal LCD(6, 7, 8, 9, 10, 11); //INITIALIZING PINS FOR LCD USE
 DS1307 clock; // INITIALIZING DS1307 AS A CLOCK
 
 int push_button = 13; // pushbutton switches between C and CC
